@@ -1,0 +1,41 @@
+---
+output: 
+  rmarkdown::html_fragment
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(readr)
+library(knitr)
+library(dplyr)
+```
+<center>
+## PT-Meta Table
+</center>
+```{r echo = FALSE, results = 'asis'}
+tMeta <- read.csv("C:/users/tzurloye/desktop/Info/metaTable.csv")
+
+tMeta$Image[1] <- '<img src = "C:/users/tzurloye/desktop/Info/alum_silicates.png"></img>'
+tMeta$Image[2] <- '<img src = "C:/users/tzurloye/desktop/Info/intrusion_model.png"></img>'
+tMeta$Image[3] <- '<img src = "C:/users/tzurloye/desktop/Info/collision_model.png"></img>'
+tMeta$Image[4] <- '<img src = "C:/users/tzurloye/desktop/Info/invertY.png"></img>'
+tMeta$Image[5] <- '<img src = "C:/users/tzurloye/desktop/Info/10_deg_geotherm.png"></img>'
+tMeta$Image[6] <- '<img src = "C:/users/tzurloye/desktop/Info/20_deg_geotherm.png"></img>'
+tMeta$Image[7] <- '<img src = "C:/users/tzurloye/desktop/Info/30_deg_geotherm.png"></img>'
+tMeta$Image[8] <- '<img src = "C:/users/tzurloye/desktop/Info/wet_g_solidus.png"></img>'
+tMeta$Image[9] <- '<img src = "C:/users/tzurloye/desktop/Info/annite_bound.png"></img>'
+tMeta$Image[10] <- '<img src = "C:/users/tzurloye/desktop/Info/phlog_bound.png"></img>'
+tMeta$Image[11] <- '<img src = "C:/users/tzurloye/desktop/Info/anhydrous_melt.png"></img>'
+tMeta$Image[12] <- '<img src = "C:/users/tzurloye/desktop/Info/biotite_bound.png"></img>'
+tMeta$Image[13] <- '<img src = "C:/users/tzurloye/desktop/Info/arag_bound.png"></img>'
+tMeta$Image[14] <- '<img src = "C:/users/tzurloye/desktop/Info/musc_bound.png"></img>'
+
+
+
+tMeta <- dplyr::rename(tMeta, 'Our Plot Designation' = Our.Plot.Designation, 
+                      'Full Plot Name' = Full.Plot.Name, 
+                      'Plot Description' = Plot.Description,
+                      'Primary Literature' = Primary.Literature
+                      )
+kable(tMeta, rownames = FALSE, options = list(pageLength = 11), align = 'c')
+```

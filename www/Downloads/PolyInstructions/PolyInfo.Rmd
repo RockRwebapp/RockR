@@ -1,0 +1,185 @@
+---
+title: "Making Polygon Base Images for RockR!"
+output:
+  rmarkdown::html_fragment:
+    css: "IUPUI_rmd.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+
+library(gridExtra)
+library(ggtern)
+library(knitr)
+library(png)
+library(grid)
+```
+
+******
+# How to create polygon base images for RockR!:  
+
+## Step 1
+
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](1 base import.jpg)
+</div>
+
+<font size="4"> Copy the image on which you want to base your polygons into Adobe Illustrator. </font>
+
+******
+## Step 2
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](2 ruler image.jpg)
+</div>
+
+<font size="4">Next, copy the image of a ruler into Adobe Illustrator. </font>
+
+******
+
+
+## Step 3
+
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](3 scale ruler.jpg)
+</div>
+
+<font size="4">Scale the ruler image so that it shows the precise measurements between the axis tick marks.</font>
+
+******
+
+
+## Step 4
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](4 repeat.jpg)
+</div>
+
+<font size="4">Copy and paste the ruler image to show fine scale measurements along the entire axis. </font>
+
+******
+
+## Step 5
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](5 both axes.jpg)
+</div>
+
+<font size="4">Rotate the ruler image 90 degrees, and repeat steps 3 and 4 for the other axis. </font>
+
+******
+
+## Step 6
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](6 draw rectangle.jpg)
+</div>
+
+<font size="4">Draw a rectangle. Begin at the origin, and drag the shape until a polygon vertex is reached.The top and right edges of the rectangle should line up directly with the y and x coordinates, respectively. </font>
+
+******
+
+## Step 7
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](7 define vertex coordinates.jpg)
+</div>
+
+<font size="4">Label each vertex. Then, use step 6 to identify and record the x and y coordinates of each vertex in the base image. If the origin of your diagram is not at (0,0), make sure your coordinates follow suit. For example, if your origin is at (35,40), and the coordinates for a vertex are 10 units and 5 units from the origin along the x and y axes respectively, then the coordinates of your vertex are (45,45). </font>
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](8 label vertices.jpg)
+</div>
+
+******
+
+## Step 8
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](sheet labels.jpg)
+</div>
+
+<font size="4">Create an Excel file. Label 3 sheets at the bottom of the file as "plys", "lbls", and "axes", respectively.
+Steps 9 and 10 will be on the "plys" sheet. Steps 11 and 12 will be on the "lbls" sheet. Step 13 will be on the "axes" sheet.
+
+Try to limit the number of characters in the file name to 4-6. (e.g. the Shepard's ternary plot file is called "Shep").</font>
+
+******
+
+
+## Step 9
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](9 build poly.jpg)
+</div>
+
+<font size="4">In Excel, organize the spreadsheet so that, for each polygon, each vertex is listed. The polygons will build by connecting from one point (vertex) to the next. Record the vertices for each polygon either in a clockwise or counterclockwise progression. Be consistent throughout the spreadsheet (for your own piece of mind).</font>
+
+******
+
+## Step 10
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](10 replace with coordinates.jpg)
+</div>
+
+<font size="4">In Excel, replace each vertex label with the x and y coordinates recorded in steps 6 and 7.</font>
+
+******
+
+## Step 11
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](11 poly label.jpg)
+</div>
+
+<font size="4">In order to populate the "lbls" sheet, open the R file Ply_build.R. The generated position of your labels for each polygon will be in the calculated center of the polygon based on your vertices. Make the following adjustments to the file:
+
+Line 5 - Change the working directory to the location of RockR! on your computer. 
+
+Line 6 - Change the excel file to the file you created in Step 8. 
+
+Line 18 - If you want any of the labels to show wrapped text (text shown on multiple lines), replace the "Basement Uplift" text with your desired label and the condensed text with the "forward slash n" designating the next line command.
+
+If you have no desired text changes, place a # symbol at the beginning of line 18 to "comment out" the entire line. The program will skip over this line when it runs. 
+
+When everything is set to your satisfaction, highlight lines 1-18 and run the selected lines. Do this clicking "Code" at the top, then selecting "Run selected line(s)" from the drop-down.
+
+This will create a new excel file called lbls.csv in the same location as the file created in Step 8.</font>
+
+******
+
+## Step 12
+
+<font size="4">Open the lbls.csv file. Copy all of the contents, and paste them into the "lbls" sheet of the file you created in Step 8.</font>
+
+******
+
+## Step 13
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](13 axes sheet.jpg)
+</div>
+
+<font size="4">Input the desired labels for the default X axis, Y axis, and plot title.</font>
+
+******
+
+## Step 14
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](14 add plot.jpg)
+</div>
+
+<font size="4">In the ui (user interface) .R file, add the file name (Step 8) to the list of discrimination plots. When RockR! is run, the new polygon base layer will be available from the drop-down select in the plot tab.</font>
+
+******
+
+## You're Done!
+
+******
+
+<br>
+<br>

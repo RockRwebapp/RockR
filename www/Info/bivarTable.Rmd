@@ -1,0 +1,32 @@
+---
+output: 
+  rmarkdown::html_fragment
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(readr)
+library(knitr)
+library(dplyr)
+```
+<center>
+## Bivariate Table
+</center>
+```{r echo = FALSE, results = 'asis'}
+tBivar <- read.csv("C:/users/tzurloye/desktop/Info/bivarTable.csv")
+
+tBivar$Image[1] <- '<img src = "C:/users/tzurloye/desktop/Info/alum_silicates.png"></img>'
+tBivar$Image[2] <- '<img src = "C:/users/tzurloye/desktop/Info/intrusion_model.png"></img>'
+# tBivar$Image[3] <- '<img src = "C:/users/tzurloye/desktop/rockr_images_apndx/facies_square/collision_model.png"></img>'
+# tBivar$Image[4] <- '<img src = "C:/users/tzurloye/desktop/rockr_images_apndx/facies_square/invertY.png"></img>'
+
+tBivar <- dplyr::rename(tBivar, 'Our Plot Designation' = Our.Plot.Designation, 
+                      'Full Plot Name' = Full.Plot.Name, 
+                      'Plot Description' = Plot.Description,
+                      'Primary Literature' = Primary.Literature
+                      )
+kable(tBivar, rownames = FALSE, options = list(pageLength = 11), align = 'c')
+```
+<br>
+<br>
+<br>

@@ -1,0 +1,93 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129965727-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129965727-1');
+</script>
+
+<!-- Event tracking codes for bivariate section of RockR -->
+<script>
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'bvFile') {
+	   gtag('event', event.name, {
+	   'event_category': 'data upload',
+	   'event_label': 'user uploaded bivariate data file'
+	   });
+	}
+  });
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'bvDiscrim') {
+	   gtag('event', event.name, {
+	   'event_category': 'input change',
+	   'event_label': event.value
+	   });
+	}
+  });
+  $(document).on('shiny:filedownload', function(event) {
+  if (event.name === 'bvDownloadPlot') {
+	   gtag('event', event.name, {
+	   'event_category': 'plot download',
+	   'event_label': 'user downloaded bivariate plot'
+	   });
+	}
+  });
+</script>
+
+<!-- Event tracking codes for ternary section of RockR -->
+<script>
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'ternFile') {
+	   gtag('event', event.name, {
+	   'event_category': 'data upload',
+	   'event_label': 'user uploaded ternary data file'
+	   });
+	}
+  });
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'ternDiscrim') {
+	   gtag('event', event.name, {
+	   'event_category': 'input change',
+	   'event_label': event.value
+	   });
+	}
+  });
+  $(document).on('shiny:filedownload', function(event) {
+  if (event.name === 'ternDownloadPlot') {
+	   gtag('event', event.name, {
+	   'event_category': 'plot download',
+	   'event_label': 'user downloaded ternary plot'
+	   });
+	}
+  });
+</script>
+
+<!-- Event tracking codes for metamorphic section of RockR -->
+<script>
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'ptFile') {
+	   gtag('event', event.name, {
+	   'event_category': 'data upload',
+	   'event_label': 'user uploaded metamorphic data file'
+	   });
+	}
+  });
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'ptPlys') {
+	   gtag('event', event.name, {
+	   'event_category': 'input change',
+	   'event_label': event.value
+	   });
+	}
+  });
+  $(document).on('shiny:filedownload', function(event) {
+  if (event.name === 'ptDownloadPlot') {
+	   gtag('event', event.name, {
+	   'event_category': 'plot download',
+	   'event_label': 'user downloaded metamorphic plot'
+	   });
+	}
+  });
+</script>

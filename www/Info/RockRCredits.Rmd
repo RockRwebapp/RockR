@@ -1,0 +1,136 @@
+---
+output:
+  rmarkdown::html_fragment:
+    css: "IUPUI_rmd.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+
+library(gridExtra)
+library(knitr)
+library(png)
+library(grid)
+library(readxl)
+library(kableExtra)
+```
+
+
+#We hope you enjoy using RockR!
+
+<br>
+
+##App authors
+Jeremiah Mickey,
+John T. Shukle,
+Thomas zur Loye*,
+
+* Corresponding author
+
+##Faculty Administrator
+Andrew Barth (ibsz100@iupui.edu)
+
+##Contact the RockR! developers
+earthsciencesapps.rockr@gmail.com
+
+##RockR! social media
+Facebook page: RockR 
+
+Facebook @mention: @RockRwebapp
+
+Reddit: u/RockRwebapp
+
+Twitter page: RockRwebapp
+
+Twitter @mention: @RRwebapp
+
+##How to cite RockR!
+RockR! (2019). Retrieved from http://apps.earthsciences.iupui.edu:3838/RockR/
+
+##License and Limitations
+Licensed under the <a href="https://github.com/jshukle/RockR/blob/master/LICENSE" target="_blank">**GNU General Public License v3.0**</a>
+<br>
+
+##R Package References
+
+Attali, D. (2017). colourpicker: A Colour Picker Tool for Shiny and for
+  Selecting Colours in Plots. R package version 1.0.
+  <a href="https://CRAN.R-project.org/package=colourpicker" target="_blank">https://CRAN.R-project.org/package=colourpicker</a>
+
+Auguie, B. (2016). gridExtra: Miscellaneous Functions for "Grid" Graphics. R
+  package version 2.2.1. <a href="https://CRAN.R-project.org/package=gridExtra" target="_blank">https://CRAN.R-project.org/package=gridExtra</a>
+
+Chang, W., Cheng, J., Allaire, J. J., Xie, Y. and McPherson, J. (2017).
+  shiny: Web Application Framework for R. R package version 1.0.5.
+  <a href="https://CRAN.R-project.org/package=shiny" target="_blank">https://CRAN.R-project.org/package=shiny</a>
+
+Guzman, R. G. (2015). NORRRM: Geochemical Toolkit for R. R package
+  version 1.0.0. <a href="https://CRAN.R-project.org/package=NORRRM" target="_blank">https://CRAN.R-project.org/package=NORRRM</a>
+
+Hamilton, N. (2017). ggtern: An Extension to ggplot2, for the Creation of
+  Ternary Diagrams. R package version 2.2.1.
+  <a href="https://CRAN.R-project.org/package=ggtern" target="_blank">https://CRAN.R-project.org/package=ggtern</a>
+
+R Core Team (2017). R: A language and environment for statistical computing. R
+  Foundation for Statistical Computing, Vienna, Austria. URL
+  <a href="https://www.R-project.org/" target="_blank">https://www.R-project.org/</a>.
+
+Urbanek, S. (2013). png: Read and write PNG images. R package version 0.1-7.
+  <a href="https://CRAN.R-project.org/package=png" target="_blank">https://CRAN.R-project.org/package=png</a>
+
+Wickham, H. (2009). ggplot2: Elegant Graphics for Data Analysis (2nd ed.). New York, NY: Springer-Verlag.
+
+Wickham, H. & Bryan, J. (2017). readxl: Read Excel Files. R package
+  version 1.0.0. <a href="https://CRAN.R-project.org/package=readxl" target="_blank">https://CRAN.R-project.org/package=readxl</a>
+
+Xie, Y. (2014) knitr: A Comprehensive Tool for Reproducible Research in R. In
+  Victoria Stodden, Friedrich Leisch and Roger D. Peng, editors, Implementing
+  Reproducible Computational Research. Chapman and Hall/CRC. ISBN 978-1466561595
+
+Xie, Y. (2015) Dynamic Documents with R and knitr. 2nd edition. Chapman and
+  Hall/CRC. ISBN 978-1498716963
+
+Xie, Y. (2017). knitr: A General-Purpose Package for Dynamic Report Generation
+  in R. R package version 1.17.
+
+##Primary Literature References
+
+Aramaki, S., & Roy, R. (1962). Revised phase diagram for the system Al2O3—SiO2. _Journal of the American Ceramic Society_, _45_(*5*), 229-242.
+
+Cox, K. G., Bell, J. D., & Pankhurst, R. J. (1979) The interpretation of igneous rocks. London, GB: Unwin Hyman Ltd.
+
+Dickinson, W. R., & Suczek, C. A. (1979). Plate tectonics and sandstone compositions. _Aapg Bulletin_, _63_(*12*), 2164-2182.
+
+Eskola, P. (1920). The Mineral Facies of Rocks.  _Norsk. Geol. Tidsskr. 6_, 143-194. 
+
+Folk, R. L. (1954). The distinction between grain size and mineral composition in sedimentary-rock nomenclature. _The Journal of Geology_, _62_(*4*), 344-359.
+
+Lebas, M.J., Le Maitre, R.W., Streckeisen, A., Zanettin, B. (1986). A Chemical
+Classification of Volcanic Rocks Based on the Total Alkali-Silica Diagram. _Journal of Petrology_, _27_ (*3*), 745-750.
+
+Middlemost, E. (1994). Naming materials in the magma/igneous rock system. _Earth-Science Reviews_, _37_, 215-224
+
+Möbius, A. F. (1827). Der barycentrische Calcul ein neues Hüsmittel zur
+  analytischen Behandlung der Geometrie dargestellt und insbesondere
+  auf die Bildung neuer Classen von Aufgaben und die
+  Entwickelung mehrerer Eiegnschaften der Kegelschnitte. Leipzig: J.
+  A. Barth
+
+O'Connor, J. T. (1965). A classification for quartz-rich igneous rocks based on feldspar ratios. _US Geological Survey Professional Paper B_, _525_, 79-84.
+
+Peacock, S. M. (1993). The importance of blueschist- eclogite dehydration reactions in subducting oceanic crust. _Geological Society of America_, _105_, 684-694
+
+Shepard, F.P. (1954). Nomenclature based on sand-silt-clay ratios: _Journal of Sedimentary Petrology_, _24_, 151-158.
+
+Streckeisen, A. (1976). To each plutonic rock its proper name. _Earth-science reviews_, _12_(*1*), 1-33.
+
+Streckeisen, A. (1980). Classification and nomenclature of volcanic rocks, lamprophyres, carbonatites and melilitic rocks IUGS Subcommission on the systematics of igneous rocks. _Geologische Rundschau_, _69_(*1*), 194-207.
+
+Turner, F.J., (1948). Mineralogical and Structural Evolution of the Metamorphic Rocks. _Geol. Soc. Am. Mem._, _30_, 1-342.
+
+Wickham, H. (2014). Tidy data. _The Journal of Statistical Software, 59_, <a href="http://vita.had.co.nz/papers/tidy-data.html" target="_blank">http://vita.had.co.nz/papers/tidy-data.html</a>.
+
+Wilson, B.M. (2007) Igneous petrogenesis: a global tectonic approach. Berlin, DE: Springer-Verlag.
+
+
+  <br>

@@ -1,0 +1,29 @@
+---
+output:
+  rmarkdown::html_fragment:
+    css: "IUPUI_rmd.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+
+library(gridExtra)
+library(knitr)
+library(png)
+library(grid)
+library(readxl)
+library(kableExtra)
+```
+
+
+#Want to Contribute to RockR
+
+<br>
+
+RockR is an ongoing project, we update the app frequently as we discover bugs that need addressed or when we wish to add functionality. However, we have a limited amount of free time to add additional plots/functionality to the program. 
+Because RockR is a freely released, fully open-source project. You can download the full app directory as a zip file using the button at the botton of this page and modify it as you see fit. Additionally, you can help us to 
+
+
+##How to build a discrimination diagram for RockR
+
+Don't see you favorite discrimination diagram listed? Have you developed your own diagram associated with a publication and want to add it to RockR? Want your students to have access to additional diagrams? 

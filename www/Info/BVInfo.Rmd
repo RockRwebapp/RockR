@@ -1,0 +1,27 @@
+---
+title: "Introduction To Bivariate Diagrams"
+output:
+  rmarkdown::html_fragment:
+    css: "IUPUI_rmd.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+
+library(gridExtra)
+library(ggtern)
+library(knitr)
+library(png)
+library(grid)
+```
+
+Bivariate diagrams are used to display the relationship between two sets of variables. Each axis can be a single variable or be the sum of multiple variables.
+
+One popular type of bivariate diagram is a TAS plot. TAS is an acronym for Total Alkali vs. Silica. This type of plot is used to classify igneous rocks by comparing the weigh percentage of SiO2 with the weight percentage of NaO2 plus K20 in a particular rock sample. Specific ranges of this ratio are assigned a specific compositional classification.
+
+Below is a classic example of an extrusive TAS bivariate plot, modelled after the 1986 puplication by <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.923.434&rep=rep1&type=pdf" target="_blank">Le Bas, et al</a>. 
+
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:1400px">
+![](BV_screen_cap.png)
+</div>

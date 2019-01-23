@@ -1,0 +1,39 @@
+---
+output: 
+  rmarkdown::html_fragment
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(readr)
+library(knitr)
+library(dplyr)
+```
+<center>
+## Ternary Table
+</center>
+```{r echo = FALSE, results = 'asis'}
+tTern <- read.csv("C:/users/tzurloye/desktop/Info/ternTable.csv")
+
+tTern$Image[1] <- '<img src = "C:/users/tzurloye/desktop/Info/QFL.png"></img>'
+tTern$Image[2] <- '<img src = "C:/users/tzurloye/desktop/Info/QFL2.png"></img>'
+tTern$Image[3] <- '<img src = "C:/users/tzurloye/desktop/Info/AFM.png"></img>'
+tTern$Image[4] <- '<img src = "C:/users/tzurloye/desktop/Info/QAPi.png"></img>'
+tTern$Image[5] <- '<img src = "C:/users/tzurloye/desktop/Info/QAPe.png"></img>'
+tTern$Image[6] <- '<img src = "C:/users/tzurloye/desktop/Info/NFsp.png"></img>'
+tTern$Image[7] <- '<img src = "C:/users/tzurloye/desktop/Info/MFsp65.png"></img>'
+tTern$Image[8] <- '<img src = "C:/users/tzurloye/desktop/Info/NFsp65.png"></img>'
+tTern$Image[9] <- '<img src = "C:/users/tzurloye/desktop/Info/USDAsoils.png"></img>'
+tTern$Image[10] <- '<img src = "C:/users/tzurloye/desktop/Info/Shep.png"></img>'
+tTern$Image[11] <- '<img src = "C:/users/tzurloye/desktop/Info/FspClass.png"></img>'
+
+tTern <- dplyr::rename(tTern, 'Our Plot Designation' = Our.Plot.Designation, 
+                      'Full Plot Name' = Full.Plot.Name, 
+                      'Plot Description' = Plot.Description,
+                      'Primary Literature' = Primary.Literature
+                      )
+kable(tTern, rownames = FALSE, options = list(pageLength = 11), align = 'c')
+```
+<br>
+<br>
+<br>

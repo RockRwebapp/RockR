@@ -1,0 +1,27 @@
+---
+title: "Introduction To PT Diagrams"
+output:
+  rmarkdown::html_fragment:
+    css: "IUPUI_rmd.css"
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+
+library(gridExtra)
+library(ggtern)
+library(knitr)
+library(png)
+library(grid)
+```
+A metamorphic pressure vs. temperature plot shows the locations of <a href="https://en.wikipedia.org/wiki/Metamorphic_facies" target="_blank">metamorphic facies</a> within pressure-temperature space. Individual facies are defined by specific mineralogical assemblages, which are consistent throughout a given facies.
+
+Metamorphic facies were first introduced by Finnish geologist <a href="https://www.encyclopedia.com/science/dictionaries-thesauruses-pictures-and-press-releases/eskola-pentti-elias" target="_blank">Pentti Eskola</a> in 1920. <a href="http://foreninger.uio.no/ngf/ngt/pdfs/NGT_06_1&2_143-194.pdf" target="_blank">Click here to read his original manuscript.</a> These were later expanded on by New Zealand geologist and UC Berkeley professor <a href="https://en.wikipedia.org/wiki/Francis_John_Turner" target="_blank">Francis John Turner</a>.
+
+Below is a typical metamorphic facies diagram.
+
+<div style="display: inline-block; vertical-align:top; text-align:center; width:100%">
+![](PT_screen_cap.png)
+</div>
+
+******
