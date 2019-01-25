@@ -182,21 +182,29 @@ ui <- fluidPage(
              hr(style="border-color: black;"),
              
              fluidRow(
-               column(4,
-                      a(img(src = "Figs/EarthChem.png", height = '300px', width = '300px'),
-                        target = "_blank",
-                        href = "https://www.earthchem.org/data/access"
-                      )
-               ),
-               column(4,
-                      a(img(src = "Figs/USGS.png", height = '300px', width = '300px'),
-                        target = "_blank",
-                        href = "https://data.usgs.gov/datacatalog/"
-                      )
-               ),
-               column(4,
+               column(2,
                       div(height = 300, width = 300)
-               )
+               ),
+               column(4,
+                      div(title = "EarthChem",
+                        a(img(src = "Figs/EarthChem.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://www.earthchem.org/data/access"
+                        )
+                      )
+               ),
+               column(4,
+                      div(title = "USGS Data Catalog",
+                        a(img(src = "Figs/USGS.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://data.usgs.gov/datacatalog/"
+                        )
+                      )
+               ),
+               column(2,
+                      div(height = 300, width = 300)
+               ),
+               align = "center"
              ),
              
              hr(style="border-color: black;"),
@@ -204,21 +212,88 @@ ui <- fluidPage(
              hr(style="border-color: black;"),
              
              fluidRow(
-               column(4,
-                      a(img(src = "Figs/MinDat.png", height = '300px', width = '300px'),
-                        target = "_blank",
-                        href = "https://www.mindat.org/"
-                      )
-               ),
-               column(4,
-                      a(img(src = "Figs/WebMineral.png", height = '300px', width = '300px'),
-                        target = "_blank",
-                        href = "http://www.webmineral.com/"
-                      )
-               ),
-               column(4,
+               column(2,
                       div(height = 300, width = 300)
-               )
+               ),
+               column(4,
+                      div(title = "Mineral Data",
+                        a(img(src = "Figs/MinDat.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://www.mindat.org/"
+                        )
+                      )
+               ),
+               column(4,
+                      div(title = "Web Mineral",
+                        a(img(src = "Figs/WebMineral.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "http://www.webmineral.com/"
+                        )
+                      )
+               ),
+               column(2,
+                      div(height = 300, width = 300)
+               ),
+               align = "center"
+             ),
+             
+             hr(style="border-color: black;"),
+             h2("Geologic/Geochemical Societies", align = "center"),
+             hr(style="border-color: black;"),
+             
+             fluidRow(
+               column(4,
+                      div(title = "Geological Society of America",
+                        a(img(src = "Figs/gsa.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://www.geosociety.org/"
+                        )
+                      )
+               ),
+               column(4,
+                      div(title = "American Geoscientific Institute",
+                          a(img(src = "Figs/agi.png", height = '300px', width = '300px'),
+                            target = "_blank",
+                            href = "https://www.americangeosciences.org/"
+                          )
+                      )
+               ),
+               column(4,
+                      div(title = "American Geophysical Union",
+                        a(img(src = "Figs/agu.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://sites.agu.org/"
+                        )
+                      )
+               ),
+               align = "center"
+             ),
+             br(),
+             br(),
+             fluidRow(
+               column(2,
+                      div(height = 300, width = 300)
+               ),
+               column(4,
+                      div(title = "American Institute of Professional Geologists",
+                        a(img(src = "Figs/aipg.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "http://www.aipg.org/"
+                        )
+                      )
+               ),
+               column(4,
+                      div(title = "Mineral Society of America",
+                        a(img(src = "Figs/minsocam.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "http://www.minsocam.org/"
+                        )
+                      )
+               ),
+               column(2,
+                      div(height = 300, width = 300)
+               ),
+               align = "center"
              ),
              
              hr(style="border-color: black;"),
@@ -226,23 +301,29 @@ ui <- fluidPage(
              hr(style="border-color: black;"),
              
              fluidRow(
+               column(2,
+                      div(height = 300, width = 300)
+               ),
                column(4,
-                      a(img(src = "Figs/PTable.png", height = '300px', width = '300px'),
-                        target = "_blank",
-                        href = "https://www.ptable.com/#"
+                      div(title = "Interactive Periodic Table",
+                        a(img(src = "Figs/PTable.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://www.ptable.com/#"
+                        )
                       )
                ),
                column(4,
-                      div(height = 300, width = 300)
-                      # a(img(src = "Figs/GeoPlotters.png"),
-                      #   height = 400, width = 400,
-                      #   target = "_blank",
-                      #   href = "https://www.geoplotters.com/"
-                      # )
+                      div(title = "Geo Plotters",
+                        a(img(src = "Figs/GeoPlotters.png", height = '300px', width = '300px'),
+                          target = "_blank",
+                          href = "https://www.geoplotters.com/"
+                        )
+                      )
                ),
-               column(4,
+               column(2,
                       div(height = 300, width = 300)
-               )
+               ),
+               align = "center"
              ),
              br(),
              br()
