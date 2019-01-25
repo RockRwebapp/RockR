@@ -472,6 +472,8 @@ bvPlot <- reactive({
   
   req(input$bvPlotTitle)
   
+  # browser()
+  
   # Load Plot data
   dataPlot <- bvMain$plotData
 
@@ -512,6 +514,8 @@ bvPlot <- reactive({
   #### Add discrimination polygons ####
   
   if (isolate(input$bvDiscrim) != "") {
+    
+    req(input$bvPly1)
     
     for (i in 1 : max(plys$ID)) {
       BV <- BV +

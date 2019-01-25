@@ -333,6 +333,8 @@ ternPlot <- reactive({
   if (input$ternDiscrim != "") {
     plys <- ternMain$disc$plys
     
+    req(input$ternPly1)
+    
     plycols <- paste0("c(", paste0("input$ternPly", c(1:nrow(ternMain$disc$lbls)), collapse = ", "), ")")
     plycols <- eval(parse(text = plycols))
     

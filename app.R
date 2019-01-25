@@ -175,6 +175,79 @@ ui <- fluidPage(
                
     ),
     
+    tabPanel(id = "resources", "Resources", fluid = TRUE,
+             
+             hr(style="border-color: black;"),
+             h2("Geologic/Geochemical Data Portals", align = "center"),
+             hr(style="border-color: black;"),
+             
+             fluidRow(
+               column(4,
+                      a(img(src = "Figs/EarthChem.png", height = '300px', width = '300px'),
+                        target = "_blank",
+                        href = "https://www.earthchem.org/data/access"
+                      )
+               ),
+               column(4,
+                      a(img(src = "Figs/USGS.png", height = '300px', width = '300px'),
+                        target = "_blank",
+                        href = "https://data.usgs.gov/datacatalog/"
+                      )
+               ),
+               column(4,
+                      div(height = 300, width = 300)
+               )
+             ),
+             
+             hr(style="border-color: black;"),
+             h2("Mineralogy and Petrology Databases", align = "center"),
+             hr(style="border-color: black;"),
+             
+             fluidRow(
+               column(4,
+                      a(img(src = "Figs/MinDat.png", height = '300px', width = '300px'),
+                        target = "_blank",
+                        href = "https://www.mindat.org/"
+                      )
+               ),
+               column(4,
+                      a(img(src = "Figs/WebMineral.png", height = '300px', width = '300px'),
+                        target = "_blank",
+                        href = "http://www.webmineral.com/"
+                      )
+               ),
+               column(4,
+                      div(height = 300, width = 300)
+               )
+             ),
+             
+             hr(style="border-color: black;"),
+             h2("Useful Resources", align = "center"),
+             hr(style="border-color: black;"),
+             
+             fluidRow(
+               column(4,
+                      a(img(src = "Figs/PTable.png", height = '300px', width = '300px'),
+                        target = "_blank",
+                        href = "https://www.ptable.com/#"
+                      )
+               ),
+               column(4,
+                      div(height = 300, width = 300)
+                      # a(img(src = "Figs/GeoPlotters.png"),
+                      #   height = 400, width = 400,
+                      #   target = "_blank",
+                      #   href = "https://www.geoplotters.com/"
+                      # )
+               ),
+               column(4,
+                      div(height = 300, width = 300)
+               )
+             ),
+             br(),
+             br()
+    ),
+    
     # UI code for Help tab
     tabPanel(id = "help", "Help", fluid = TRUE,# Change app title here!
            
