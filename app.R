@@ -325,8 +325,73 @@ ui <- fluidPage(
                ),
                align = "center"
              ),
+
+             hr(style="border-color: black;"),
+             h2("Open Access Publications", align = "center"),
+             p("These individual publication links are all available via the ", 
+               a(href = "http://www.minsocam.org/msa/openaccess_publications/", 
+                 "Mineral Society of America Open Access Publications List.",
+                 target = "_blank"), 
+               align = "center"),
+             hr(style="border-color: black;"),
+             
+             fluidRow(
+               column(4,
+                      div(title = "Metasomatism and Metasomatic Rocks",
+                          a(img(src = "Figs/Metasomatism.png", width = '300px'),
+                            target = "_blank",
+                            href = "Info/Metasomatism.pdf"
+                          )
+                      )
+               ),
+               column(4,
+                      div(title = "Quartz: A Bullseye on Optical Activity",
+                          a(img(src = "Figs/Quartz_Bullseye_on_Optical_Activity.png", width = '300px'),
+                            target = "_blank",
+                            href = "Info/Quartz_Bullseye_on_Optical_Activity.pdf"
+                          )
+                      )
+               ),
+               column(4,
+                      div(title = "Double Trouble: Navigating Birefringence",
+                          a(img(src = "Figs/Double_Trouble_Navigating_Birefringence.png", width = '300px'),
+                            target = "_blank",
+                            href = "Info/Double_Trouble_Navigating_Birefringence.pdf"
+                          )
+                      )
+               ),
+               align = "center"
+             ),
              br(),
              br()
+             
+             # fluidRow(
+             #   column(2,
+             #          div(height = 300, width = 300)
+             #   ),
+             #   column(4,
+             #          div(title = "Thin Section Microscopy",
+             #              a(img(src = "Figs/thin_section_microscopy.png", width = '300px'),
+             #                target = "_blank",
+             #                href = "Info/thin_section_microscopy.pdf"
+             #              )
+             #          )
+             #   ),
+             #   column(4,
+             #          div(title = "Carbon in Earth",
+             #              a(img(src = "Figs/Carbon_in_Earth.png", width = '300px'),
+             #                target = "_blank",
+             #                href = "Info/Carbon_in_Earth.pdf"
+             #              )
+             #          )
+             #   ),
+             #   column(2,
+             #          div(height = 300, width = 300)
+             #   ),
+             #   align = "center"
+             # ),
+             # br(),
+             # br()
     ),
     
     # UI code for Help tab
