@@ -67,8 +67,8 @@ Chang, W., Cheng, J., Allaire, J. J., Xie, Y. and McPherson, J. (2017).
 Guzman, R. G. (2015). NORRRM: Geochemical Toolkit for R. R package
   version 1.0.0. <a href="https://CRAN.R-project.org/package=NORRRM" target="_blank">https://CRAN.R-project.org/package=NORRRM</a>
 
-Hamilton, N. (2017). ggtern: An Extension to ggplot2, for the Creation of
-  Ternary Diagrams. R package version 2.2.1.
+Hamilton, N. E., & Ferry, M. (2018). ggtern: Ternary Diagrams Using ggplot2. _Journal of Statistical Software_, 
+  _87_(*CN 3*), 1-17.
   <a href="https://CRAN.R-project.org/package=ggtern" target="_blank">https://CRAN.R-project.org/package=ggtern</a>
 
 R Core Team (2017). R: A language and environment for statistical computing. R
