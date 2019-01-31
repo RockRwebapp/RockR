@@ -182,7 +182,7 @@ tabsetPanel(
                      
                      h4("Select Discrimination Plot:"),
                      selectInput("ternDiscrim", "Select Plot Type:",
-                                             c("","QFL", "QFL2", "QAPi", "QAPe", "NFsp", "MFsp65", "NFsp65", "USDAsoils", "Shep", "AFM", "FspClass", "PeridClass", "Folk"),
+                                             c("","QFL", "QFL2", "QAPi", "QAPe", "NFsp", "MFsp65", "NFsp65", "USDAsoils", "Shep", "AFM", "FspClass", "PeridClass", "PyroxClass", "Folk"),
                                              selected = NULL),
                      
                      wellPanel(
