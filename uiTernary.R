@@ -3,7 +3,6 @@ tabsetPanel(
   # Info tab
   tabPanel("Ternary Background",
            includeHTML("www/Info/TernInfo.html")
-  
   ),
   
   # Interactive Ternary Example Tab
@@ -135,7 +134,7 @@ tabsetPanel(
                      div(
                        style = "position:relative",
                        withSpinner(
-                         plotOutput("ternPlot", width = '100%', height = 580),
+                         plotOutput("ternPlot", width = '100%', height = "auto"), #, height = 580
                          type = 6, color = "#990000")
                      ),
                      

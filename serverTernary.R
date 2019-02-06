@@ -454,12 +454,11 @@ ternPlot <- reactive({
   }
   
   Tern +
-    labs(title = input$ternTitle) +
-    xlab(input$ternPlotLabB) +
-    ylab(input$ternPlotLabA) +
-    zlab(input$ternPlotLabC) +
+    labs(title = input$ternTitle, 
+         x = input$ternPlotLabB,
+         y = input$ternPlotLabA,
+         z = input$ternPlotLabC) +
     theme(plot.title = element_text(size = 20, hjust = 0.5))
-
 })
 
 # This block of code turns off all groups on the main plot
@@ -554,7 +553,13 @@ output$ternIntroMathC <- renderText({
 })
 
 # This block of code renders the main plot to the UI
-output$ternPlot <- renderPlot({ print(ternPlot()) })
+# output$ternPlot <- renderPlot({ ternPlot() })
+output$ternPlot <- renderPlot({ 
+  print(ternPlot())
+  NULL
+  },
+  height = function() {session$clientData$output_ternPlot_width*.77}
+  )
 
 # This block of code renders the intro plot to the UI
 output$ternIntroPlot <- renderPlot({ print(ternIntroPlot()) })

@@ -9,6 +9,9 @@ require(shinyjs)
 #Data manipulation
 require(plyr)
 
+#Latex support
+require(latex2exp)
+
 #Data loading
 require(readxl)
 require(readr)
@@ -16,7 +19,6 @@ require(readr)
 #Plotting
 require(ggplot2)
 require(ggtern)
-#require(gginnards)
 require(ggalt)
 
 # Load this package last!
@@ -54,7 +56,17 @@ ui <- fluidPage(
   ),
   
   div(class = "icon-bar",
-      # Create url with the 'twitter-share-button' class
+      #github icon
+      a(href = "https://github.com/RockRwebapp/RockR",
+        class = "fa fa-github",
+        target = "_blank",
+        style = "display: inline-block; vertical-align: middle",
+        onclick = "gtag('event', 'github_icon', {
+        'event_category': 'link click',
+        'event_label': 'user clicked github icon link'
+        })"
+      ),
+      # Create url with the 'facebook-share-button' class
       a(href = "https://www.facebook.com/RockRwebapp/?eid=ARAR3piAw1ZiSVQWLZzVOEJa47Zn11XKpC8WY8s0Izli2wTlSi7mFzaOVdEIAg1y8UJYtcJ_XKD2jIs",
         class = "fa fa-facebook",
         target = "_blank",
@@ -117,7 +129,7 @@ ui <- fluidPage(
                ),
 
                div(style="vertical-align:top; text-align:center",
-                   img(src = "Figs/RockR.png", width = "30%")
+                   img(src = "Figs/RockRHexBig.png", width = "30%")
                ),
                
                tabsetPanel(
@@ -187,19 +199,21 @@ ui <- fluidPage(
                ),
                column(4,
                       div(title = "EarthChem",
-                        a(img(src = "Figs/EarthChem.png", height = '300px', width = '300px'),
+                        a(
+                          img(src = "Figs/EarthChem.png", height = '300px', width = '300px'),
                           target = "_blank",
                           href = "https://www.earthchem.org/data/access"
-                        )
+                          )
                       )
                ),
                column(4,
                       div(title = "USGS Data Catalog",
-                        a(img(src = "Figs/USGS.png", height = '300px', width = '300px'),
+                        a(
+                          img(src = "Figs/USGS.png", height = '300px', width = '300px'),
                           target = "_blank",
                           href = "https://data.usgs.gov/datacatalog/"
+                          )
                         )
-                      )
                ),
                column(2,
                       div(height = 300, width = 300)
@@ -336,15 +350,15 @@ ui <- fluidPage(
              hr(style="border-color: black;"),
              
              fluidRow(
-               column(4,
-                      div(title = "Metasomatism and Metasomatic Rocks",
-                          a(img(src = "Figs/Metasomatism.png", width = '300px'),
+               column(3,
+                      div(title = "Guide to Thin Section Microscopy",
+                          a(img(src = "Figs/ThinGuide.png", width = '300px'),
                             target = "_blank",
-                            href = "Info/Metasomatism.pdf"
+                            href = "Info/Thin_Sctn_Mcrscpy_2_rdcd_eng.pdf"
                           )
                       )
                ),
-               column(4,
+               column(3,
                       div(title = "Quartz: A Bullseye on Optical Activity",
                           a(img(src = "Figs/Quartz_Bullseye_on_Optical_Activity.png", width = '300px'),
                             target = "_blank",
@@ -352,11 +366,19 @@ ui <- fluidPage(
                           )
                       )
                ),
-               column(4,
+               column(3,
                       div(title = "Double Trouble: Navigating Birefringence",
                           a(img(src = "Figs/Double_Trouble_Navigating_Birefringence.png", width = '300px'),
                             target = "_blank",
                             href = "Info/Double_Trouble_Navigating_Birefringence.pdf"
+                          )
+                      )
+               ),
+               column(3,
+                      div(title = "Metasomatism and Metasomatic Rocks",
+                          a(img(src = "Figs/Metasomatism.png", width = '300px'),
+                            target = "_blank",
+                            href = "Info/Metasomatism.pdf"
                           )
                       )
                ),
@@ -365,33 +387,6 @@ ui <- fluidPage(
              br(),
              br()
              
-             # fluidRow(
-             #   column(2,
-             #          div(height = 300, width = 300)
-             #   ),
-             #   column(4,
-             #          div(title = "Thin Section Microscopy",
-             #              a(img(src = "Figs/thin_section_microscopy.png", width = '300px'),
-             #                target = "_blank",
-             #                href = "Info/thin_section_microscopy.pdf"
-             #              )
-             #          )
-             #   ),
-             #   column(4,
-             #          div(title = "Carbon in Earth",
-             #              a(img(src = "Figs/Carbon_in_Earth.png", width = '300px'),
-             #                target = "_blank",
-             #                href = "Info/Carbon_in_Earth.pdf"
-             #              )
-             #          )
-             #   ),
-             #   column(2,
-             #          div(height = 300, width = 300)
-             #   ),
-             #   align = "center"
-             # ),
-             # br(),
-             # br()
     ),
     
     # UI code for Help tab
@@ -442,47 +437,23 @@ ui <- fluidPage(
                          anywhere at anytime, even in the field! Have fun and rock on!"),
                       
                       h4("Because RockR is an ongoing project. We update the app frequently as we discover bugs that need
-                         addressing or when we wish to add functionality. However, you can download current version of RockR as a zip
-                         file using the button below. Its open source so feel free to modify/share the program as you see fit."),
+                         addressing or when we wish to add functionality. However, you can download current version of RockR using the Github button below. It's open source so feel free to modify/share the program as you see fit following the GNU GPL V3.0 license."),
+                      a(p("license"),
+                        href = "https://github.com/RockRwebapp/RockR/blob/master/LICENSE",
+                        target = "_blank"),
                       
                       br(),
-                      downloadButton('baseDownloadRockR', "Get RockR!"),
+                      #downloadButton('baseDownloadRockR', "Get RockR!")
+                      #github icon
+                      a(href = "https://github.com/RockRwebapp/RockR",
+                        class = "fa fa-github",
+                        target = "_blank",
+                        style = "display: inline-block; vertical-align: middle; font-size: 48px",
+                        onclick = "gtag('event', 'github_icon', {
+                        'event_category': 'link click',
+                        'event_label': 'user clicked github icon link'
+                        })")
                       
-                      br(),
-                      h3("Most recent update"),
-                      h4("RockR! v.2.2 on 3.January.2019"),
-                      h4("Added Folk (1954) sediment classification ternary diagram"),
-                      h4("Updated references and available plots tab to reflect Folk addition"),
-                      br(),
-                      h3("Past updates"),
-                      h4("RockR! v.2.1 on 20.December.2018"),
-                      h4("Added social media links and share buttons"),
-                      h4("Navbar is now fixed when user scrolls, allowing easier app navigation"),
-                      br(),
-                      h4("RockR! v.2.0 on 18.November.2018"),
-                      h4("GGplot plotting code overhaul. Should be more efficient and faster overall"),
-                      h4("Paths added to BV, PT, and Ternary sections"),
-                      h4("Moved available plots tab to front page."),
-                      h4("Moved RockR download to help page."),
-                      h4("Added Earth Sciences homepage link to navbar title."),
-                      h4("Reorganized files within RockR directory to put all supporting files under 'www/'."),
-                      h4("Loading spinner added to plots in all sections."),
-                      br(),
-                      h4("RockR! v.1.9.1 on 14.November.2018"),
-                      h4("Added extrusive and intrusive TAS diagrams modeled after Cox et al. (1979) and Wilson (2007), respectively."),
-                      h4("Added peridotite classification ternary diagram."),
-                      h4("Updated available plots table."),
-                      br(),
-                      h4("RockR! v.1.9 on 13.November.2018"),
-                      h4("Added paths to Mm group control options."),
-                      h4("Added Collision and Intrusion labels to Mm paths."),
-                      h4("Improved PT_example file."),
-                      h4("Updated some text."),
-                      br(),
-                      h4("RockR! v.1.7 on 9.November.2018"),
-                      h4("Added support for .csv import."),
-                      h4("Added click and drag zoom functionality to PT Meta plots."),
-                      br()
                       )
            )
            )
