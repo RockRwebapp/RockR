@@ -8,12 +8,25 @@
   gtag('config', 'UA-129965727-1');
 </script>
 
+<!-- Event tracking codes for RockR initialize-->
 <script>
   $(document).on('shiny:connected', function(event) {
 	   gtag('event', 'User Visited', {
 	   'event_category': 'User Metrics',
 	   'event_label': 'user has visited RockR!'
 	   });
+  });
+</script>
+
+<!-- Event tracking codes for RockR tab clicks-->
+<script>
+  $(document).on('shiny:inputchanged', function(event) {
+  if (event.name === 'tabs') {
+	   gtag('event', event.value, {
+	   'event_category': 'tab change',
+	   'event_label': 'user changed tabs'
+	   });
+	}
   });
 </script>
 

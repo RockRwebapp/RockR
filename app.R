@@ -119,7 +119,7 @@ ui <- fluidPage(
       ),
 
     # UI code for App Info tab
-    tabPanel ( "RockR! Home", fluid = TRUE,# Change app title here!
+    tabPanel (id = "home", "RockR! Home", fluid = TRUE,# Change app title here!
                
                # this block of code supresses all error output in the final app
                # during development comment this out!!!!
@@ -437,15 +437,14 @@ ui <- fluidPage(
                          anywhere at anytime, even in the field! Have fun and rock on!"),
                       
                       h4("Because RockR is an ongoing project. We update the app frequently as we discover bugs that need
-                         addressing or when we wish to add functionality. However, you can download current version of RockR using the Github button below. It's open source so feel free to modify/share the program as you see fit following the GNU GPL V3.0 license."),
-                      a(p("license"),
-                        href = "https://github.com/RockRwebapp/RockR/blob/master/LICENSE",
-                        target = "_blank"),
+                         addressing or when we wish to add functionality. However, you can download current version of RockR using the Github button below. It's open source so feel free to modify/share the program as you see fit following the ",
+                         a("GNU GPL V3.0 license", href = "https://github.com/RockRwebapp/RockR/blob/master/LICENSE", target = "_blank"), "."),
                       
                       br(),
                       #downloadButton('baseDownloadRockR', "Get RockR!")
                       #github icon
-                      a(href = "https://github.com/RockRwebapp/RockR",
+                      a(p("@RockRwebapp"),
+                        href = "https://github.com/RockRwebapp/RockR",
                         class = "fa fa-github",
                         target = "_blank",
                         style = "display: inline-block; vertical-align: middle; font-size: 48px",
