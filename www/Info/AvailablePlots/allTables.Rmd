@@ -4,6 +4,7 @@ output:
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
 library(readr)
 library(knitr)
 library(dplyr)
@@ -19,18 +20,23 @@ Ternary Plots:
 
 ```{r tab1, echo = FALSE, results = 'asis'}
 tTern <- read.csv("ternTable.csv")
-tTern$Image[1] <- '<img src = "QFL.png", alt = "QFL ternary"></img>'
-tTern$Image[2] <- '<img src = "QFL2.png", alt = "QFL ternary"></img>'
-tTern$Image[3] <- '<img src = "AFM.png", alt = "AFM ternary"></img>'
-tTern$Image[4] <- '<img src = "QAPi.png", alt = "QAP ternary"></img>'
-tTern$Image[5] <- '<img src = "QAPe.png", alt = "QAP ternary"></img>'
-tTern$Image[6] <- '<img src = "NFsp.png", alt = "quartz-rich igneous ternary"></img>'
-tTern$Image[7] <- '<img src = "MFsp65.png", alt = "quartz-rich igneous ternary"></img>'
-tTern$Image[8] <- '<img src = "NFsp65.png", alt = "quartz-rich igneous ternary"></img>'
-tTern$Image[9] <- '<img src = "USDAsoils.png", alt = "USDA soil ternary"></img>'
-tTern$Image[10] <- '<img src = "Shep.png", alt = "Shepard soil ternary"></img>'
-tTern$Image[11] <- '<img src = "FspClass.png", alt = "feldspar classification ternary"></img>'
-tTern$Image[12] <- '<img src = "PeridClass.png", alt = "peridotite classification ternary"></img>'
+
+tTern$Image[1] <- '<img src = "QFL.png"></img>'
+tTern$Image[2] <- '<img src = "QFL2.png"></img>'
+tTern$Image[3] <- '<img src = "AFM.png"></img>'
+tTern$Image[4] <- '<img src = "QAPi.png"></img>'
+tTern$Image[5] <- '<img src = "QAPe.png"></img>'
+tTern$Image[6] <- '<img src = "NFsp.png"></img>'
+tTern$Image[7] <- '<img src = "MFsp65.png"></img>'
+tTern$Image[8] <- '<img src = "NFsp65.png"></img>'
+tTern$Image[9] <- '<img src = "USDAsoils.png"></img>'
+tTern$Image[10] <- '<img src = "Shep.png"></img>'
+tTern$Image[11] <- '<img src = "FspClass.png"></img>'
+tTern$Image[12] <- '<img src = "PeridClass.png"></img>'
+tTern$Image[13] <- '<img src = "PyroxClass.png"></img>'
+tTern$Image[14] <- '<img src = "Folk.png"></img>'
+
+
 tTern <- dplyr::rename(tTern, 'Our Plot Designation' = Our.Plot.Designation, 
                       'Full Plot Name' = Full.Plot.Name, 
                       'Plot Description' = Plot.Description,
@@ -49,16 +55,19 @@ Bivariate Plots:
 
 ```{r tab2, echo = FALSE, results = 'asis'}
 tBivar <- read.csv("bivarTable.csv")
-tBivar$Image[1] <- '<img src = "tas_classic.png", alt = "TAS total alkali silica"></img>'
-tBivar$Image[2] <- '<img src = "tas_ext.png", alt = "TAS total alkali silica"></img>'
-tBivar$Image[3] <- '<img src = "tas_int.png", alt = "TAS total alkali silica"></img>'
-tBivar$Image[4] <- '<img src = "tas_cox.png", alt = "TAS total alkali silica"></img>'
-tBivar$Image[5] <- '<img src = "tas_wilson.png", alt = "TAS total alkali silica"></img>'
+
+tBivar$Image[1] <- '<img src = "tas_classic.png"></img>'
+tBivar$Image[2] <- '<img src = "tas_ext.png"></img>'
+tBivar$Image[3] <- '<img src = "tas_int.png"></img>'
+tBivar$Image[4] <- '<img src = "tas_cox.png"></img>'
+tBivar$Image[5] <- '<img src = "tas_wilson.png"></img>'
+
 tBivar <- dplyr::rename(tBivar, 'Our Plot Designation' = Our.Plot.Designation, 
                       'Full Plot Name' = Full.Plot.Name, 
                       'Plot Description' = Plot.Description,
                       'Primary Literature' = Primary.Literature
                       )
+
 kable(tBivar, rownames = FALSE, options = list(pageLength = 11), align = 'c')
 ```
 
@@ -72,22 +81,26 @@ PT-Meta Plots:
 
 ```{r tab3, echo = FALSE, results = 'asis'}
 tMeta <- read.csv("metaTable.csv")
-tMeta$Image[1] <- '<img src = "PT.png", alt = "pressure temperature plot"></img>'
-tMeta$Image[2] <- '<img src = "PT_peacock.png", alt = "pressure temperature peacock plot"></img>'
-tMeta$Image[3] <- '<img src = "alum_silicates.png", alt = "pressure temperature aluminosilicates plot"></img>'
-tMeta$Image[4] <- '<img src = "intrusion_model.png", alt = "pressure temperature intrusion model plot"></img>'
-tMeta$Image[5] <- '<img src = "collision_model.png", alt = "pressure temperature collision model plot"></img>'
-tMeta$Image[6] <- '<img src = "invertY.png", alt = "pressure temperature inverted plot"></img>'
-tMeta$Image[7] <- '<img src = "10_deg_geotherm.png", alt = "pressure temperature plot geothermal gradient"></img>'
-tMeta$Image[8] <- '<img src = "20_deg_geotherm.png", alt = "pressure temperature plot geothermal gradient"></img>'
-tMeta$Image[9] <- '<img src = "30_deg_geotherm.png", alt = "pressure temperature plot geothermal gradient"></img>'
-tMeta$Image[10] <- '<img src = "wet_g_solidus.png", alt = "pressure temperature plot granite solidus"></img>'
-tMeta$Image[11] <- '<img src = "annite_bound.png", alt = "pressure temperature plot annite feldspar quartz magnetite"></img>'
-tMeta$Image[12] <- '<img src = "phlog_bound.png", alt = "pressure temperature plot phlogopite orthopyroxene"></img>'
-tMeta$Image[13] <- '<img src = "anhydrous_melt.png", alt = "pressure temperature plot minimum andhydrous melt"></img>'
-tMeta$Image[14] <- '<img src = "biotite_bound.png", alt = "pressure temperature plot biotite sillimanite cordierite feldspar"></img>'
-tMeta$Image[15] <- '<img src = "arag_bound.png", alt = "pressure temperature plot aragonite calcite"></img>'
-tMeta$Image[16] <- '<img src = "musc_bound.png", alt = "pressure temperature plot muscovite quartz feldspar aluminosilicate"></img>'
+
+tMeta$Image[1] <- '<img src = "PT.png"></img>'
+tMeta$Image[2] <- '<img src = "PT_peacock.png"></img>'
+tMeta$Image[3] <- '<img src = "alum_silicates.png"></img>'
+tMeta$Image[4] <- '<img src = "intrusion_model.png"></img>'
+tMeta$Image[5] <- '<img src = "collision_model.png"></img>'
+tMeta$Image[6] <- '<img src = "invertY.png"></img>'
+tMeta$Image[7] <- '<img src = "10_deg_geotherm.png"></img>'
+tMeta$Image[8] <- '<img src = "20_deg_geotherm.png"></img>'
+tMeta$Image[9] <- '<img src = "30_deg_geotherm.png"></img>'
+tMeta$Image[10] <- '<img src = "wet_g_solidus.png"></img>'
+tMeta$Image[11] <- '<img src = "annite_bound.png"></img>'
+tMeta$Image[12] <- '<img src = "phlog_bound.png"></img>'
+tMeta$Image[13] <- '<img src = "anhydrous_melt.png"></img>'
+tMeta$Image[14] <- '<img src = "biotite_bound.png"></img>'
+tMeta$Image[15] <- '<img src = "arag_bound.png"></img>'
+tMeta$Image[16] <- '<img src = "musc_bound.png"></img>'
+
+
+
 tMeta <- dplyr::rename(tMeta, 'Our Plot Designation' = Our.Plot.Designation, 
                       'Full Plot Name' = Full.Plot.Name, 
                       'Plot Description' = Plot.Description,
