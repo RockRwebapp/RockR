@@ -190,10 +190,16 @@ tabsetPanel(
                        textInput("ternTitle", "Title of plot:", value = "My Title"),
                        # Axis label for A axis 
                        textInput("ternPlotLabA", "A axis label:", value = "A"),
+                       # Axis label for A arrow 
+                       textInput("ternPlotArrowA", "A arrow label:", value = "A (%)"),
                        # Axis label for B axis 
                        textInput("ternPlotLabB", "B axis label:", value = "B"),
+                       # Axis label for B arrow 
+                       textInput("ternPlotArrowB", "B arrow label:", value = "B (%)"),
                        # Axis label for C axis
-                       textInput("ternPlotLabC", "C axis label:", value = "C")
+                       textInput("ternPlotLabC", "C axis label:", value = "C"),
+                       # Axis label for C arrow 
+                       textInput("ternPlotArrowC", "C arrow label:", value = "C (%)")
                      )
              )         
            )

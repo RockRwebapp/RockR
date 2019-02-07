@@ -15,8 +15,6 @@ ternFullData <- reactive({
     foo2 <- read_csv(inFile$datapath, na = "NA")
   }
   
-  # ga_collect_event(event_category = "App Uploads", event_action = "Data Upload", event_label = "User uploaded Tern data")
-  
   foo2
 
 })
@@ -187,7 +185,7 @@ output$ternPlyPanel <- renderUI({
   lbls <- data.frame(read_excel(File, 2))[,1]
   
   lapply(seq_along(lbls), function(i) {
-    div(style="display: inline-block; vertical-align:moddle; width: 23%;",
+    div(style="display: inline-block; width: 23%;",
         colourInput(paste0("ternPly", i), lbls[i], "#FFFFFF80", allowTransparent = TRUE)
     )
   })
@@ -200,8 +198,6 @@ observeEvent( input$ternDiscrim, {
     plys <- read_excel(File, 1)
     lbls <- read_excel(File, 2)
     txt <- read_excel(File, 3)
-    
-    # ga_collect_event(event_category = "App Inputs", event_action = "Discrim Selection", event_label = paste0("Tern: ", input$ternDiscrim))
     
     ternMain$disc <- list(plys = plys, lbls = lbls, txt = txt)
   }
@@ -303,6 +299,8 @@ observe({
 
 # This block of code builds the plot
 ternPlot <- reactive({
+  
+  #browser()
   
   #### Add base plot ####
   Tern <- ggtern(A=1, B=1, C=1) +
@@ -458,6 +456,9 @@ ternPlot <- reactive({
          x = input$ternPlotLabB,
          y = input$ternPlotLabA,
          z = input$ternPlotLabC) +
+    Tarrowlab(input$ternPlotArrowA) +
+    Larrowlab(input$ternPlotArrowB) +
+    Rarrowlab(input$ternPlotArrowC) +
     theme(plot.title = element_text(size = 20, hjust = 0.5))
 })
 
@@ -574,6 +575,9 @@ observeEvent(input$ternDiscrim, {
     updateTextInput(session, "ternPlotLabA", value = "A")
     updateTextInput(session, "ternPlotLabB", value = "B")
     updateTextInput(session, "ternPlotLabC", value = "C")
+    updateTextInput(session, "ternPlotArrowA", value = "A (%)")
+    updateTextInput(session, "ternPlotArrowB", value = "B (%)")
+    updateTextInput(session, "ternPlotArrowC", value = "C (%)")
   }
   
   if (input$ternDiscrim != "") {
@@ -581,10 +585,13 @@ observeEvent(input$ternDiscrim, {
     data <- ternMain$disc$txt
   
     # This will change the value of input$inText, based on x
-    updateTextInput(session, "ternTitle", value = as.character(data[1,4]))
+    updateTextInput(session, "ternTitle", value = as.character(data[1,7]))
     updateTextInput(session, "ternPlotLabA", value = as.character(data[1,1]))
     updateTextInput(session, "ternPlotLabB", value = as.character(data[1,2]))
     updateTextInput(session, "ternPlotLabC", value = as.character(data[1,3]))
+    updateTextInput(session, "ternPlotArrowA", value = as.character(data[1,4]))
+    updateTextInput(session, "ternPlotArrowB", value = as.character(data[1,5]))
+    updateTextInput(session, "ternPlotArrowC", value = as.character(data[1,6]))
   }
 
 })
