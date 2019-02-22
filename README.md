@@ -10,7 +10,7 @@ RockR! is a program designed to make plotting data onto geoscience discriminant 
 
 RockR! provides a graphical user interface to the R programming language. For ternary plots, RockR! wraps functionality provided by the R package ggtern. For TAS diagrams and metamorphic facies diagrams, RockR! wraps functionality provided in the R package ggplot2. Additional R packages used include Shiny, shinywidgets, shinyBS, shinycssloaders, colourpicker, readxl, readr, grid, gridExtra, knitr, ggalt, and png.
 
-If you wish to download RockR! to contribute or understand the behind-the-scenes workings of it, you may download the full zip file in the “Download RockR!” tab.
+If you wish to download RockR! to contribute to or understand the behind-the-scenes workings of it, you can download the files here or fork this repository. If you do, make sure to read and adhere to the license agreement (link at the bottom of this README).
 
 If you wish to see our reference list for RockR!, create a citation for RockR!, or contact the people behind RockR!, please click on the “Credits” tab.
 
