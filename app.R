@@ -8,6 +8,7 @@ require(shinyjs)
 
 #Data manipulation
 require(plyr)
+require(glue)
 
 #Latex support
 require(latex2exp)
@@ -36,6 +37,8 @@ ui <- fluidPage(
   theme = "IUPUI.css",
 
   tags$head(includeHTML(("google-analytics.html"))),
+  
+  tags$head(tags$script(src = "scripts2.js")),
   
   # This code is used to build what shows in the users browser tab when the app is loaded
   list(tags$head(HTML('<link rel="icon", href="Figs/trident_large.png",
@@ -92,6 +95,7 @@ ui <- fluidPage(
         class="twitter-share-button",
         style = "display: inline-block; vertical-align: middle"
       ),
+      
       includeScript("widgets.js")
       
   ),
@@ -127,22 +131,8 @@ ui <- fluidPage(
                           ".shiny-output-error { visibility: hidden; }",
                           ".shiny-output-error:before { visibility: hidden; }"
                ),
-
-               div(style="vertical-align:top; text-align:center",
-                   img(src = "Figs/RockRHexBig.png", width = "30%")
-               ),
-               
-               tabsetPanel(
-                 tabPanel("Introduction",
-                          includeHTML("www/Info/RockRInfo.html")
-                 ),
-                 tabPanel("Available Plots",
-                          includeHTML("www/Info/allTables.html")
-                 ),
-                 tabPanel("Credits",
-                          includeHTML("www/Info/RockRCredits.html")
-                 )
-               )
+              
+              uiOutput("appLanding")
     ),
     
     # UI code for Bivariate tab
@@ -464,17 +454,48 @@ ui <- fluidPage(
 ##### Server ####
 server <- function(input, output, session){
   
-  # watches for users to click the IUPUI Earth Sciences link and records the event with Google Analytics
-  # onclick("linkIUPUI",
-  #         ga_collect_event(event_category = "Link", event_action = "Link Clicked",
-  #                                       event_label = "User clicked IUPUI link")
-  #         )
-  
   onclick(
     id = "tabs",
     shinyjs::runjs("window.scrollTo(0,0)")
   )
-
+  
+  output$appLanding <- renderUI({
+    div(
+      div(class="slideshow-container", style= glue('background-image: url("Figs/LandingImages/RockRLanding{round(runif(1,1,6),0)}.png");
+                     background-size: 100% 100%; vertical-align:top; text-align:center; min-height: calc(100vh - 100px);
+                     padding: 0px 0px; opacity: 1;'),
+          div(
+            img(src = "Figs/RockRHexBig.png", width = "30%")
+          ),
+          br(),
+          h1("Welcome! Let's make a ", style = 'font-weight: bold; display:table; background-color: #ffffff;
+                        opacity: .9; 0px solid black; padding: 15px; margin: 0 auto;',
+             span(id = "verb-and-cursor",
+                  span(id = "verb", style = 'color: #990000; font-size: 40px; font-weight: bold;'),
+                  span(id = "cursor", "|", style = 'color: #01426A; font-size: 40px; font-weight: bold;')
+             ),
+             "plot."
+          ),
+          br(),
+          span(style = 'background-color: #ffffff; border-radius: 25px; opacity: .75; padding: 5px;',
+               "Scroll to learn more")
+      ),
+      
+      br(),
+      
+      tabsetPanel(
+        tabPanel("Introduction",
+                 includeHTML("www/Info/RockRInfo.html")
+        ),
+        tabPanel("Available Plots",
+                 includeHTML("www/Info/allTables.html")
+        ),
+        tabPanel("Credits",
+                 includeHTML("www/Info/RockRCredits.html")
+        )
+      )
+  )
+  })
 
   # # load Ternary section server code
   source("serverBV.R", local = TRUE)$value
