@@ -8637,12 +8637,34 @@ button.close {
     font-size: 20px;
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (min-width:768px) and (max-width:1100px) {
     .icon-bar {
         position: absolute;
         top: 20px;
   	right: 40px;
 	z-index: 1001;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #img-id {
+        position: absolute;
+        top: 80px;
+  	right: 20px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .icon-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #earthSciTitle {
+        position: absolute;
+        top: -20px;
+  	left: 60px;
     }
 }
 
