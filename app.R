@@ -45,7 +45,7 @@ ui <- fluidPage(
                       type="image/png" />'))),
   div(style="padding: 0px 0px; width: '100%'",
       titlePanel(
-        title="", windowTitle="RockR! v.2.2" # Change name and version here!
+        title="", windowTitle="RockR! v.2.45" # Change name and version here!
       )
   ),
 
@@ -95,22 +95,23 @@ ui <- fluidPage(
         class="twitter-share-button",
         style = "display: inline-block; vertical-align: middle"
       ),
-      
+
       includeScript("widgets.js")
-      
+
   ),
   
   navbarPage( id = "tabs",
 
     # The title section below is where you can alter the navbar title and logo
-    title = a(
-      fluidRow(
-        column(2,
-             img(src="Figs/trident_large.png", height = 40, width = 40)
-             ),
-        column(10,
-            p("IUPUI Earth Sciences Apps")
-             )
+    title = 
+      a(id = "earthSciTitle",
+        fluidRow(
+          column(2,
+               img(src="Figs/trident_large.png", height = 40, width = 40)
+          ),
+          column(10,
+              p("IUPUI Earth Sciences Apps")
+          )
         ),
       id = "linkIUPUI",
       target = "_blank",
@@ -445,7 +446,14 @@ ui <- fluidPage(
                       
                       )
            )
-           )
+          ),
+    tabPanel(title = ""),
+    tabPanel(title = ""),
+    tabPanel(title = ""),
+    tabPanel(title = ""),
+    tabPanel(title = ""),
+    tabPanel(title = ""),
+    tabPanel(title = "")
   )
 )
 
