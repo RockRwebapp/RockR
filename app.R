@@ -345,7 +345,7 @@ ui <- fluidPage(
                       div(title = "Guide to Thin Section Microscopy",
                           a(img(src = "Figs/ThinGuide.png", width = '300px'),
                             target = "_blank",
-                            href = "Info/Thin_Sctn_Mcrscpy_2_rdcd_eng.pdf"
+                            href = "Info/thin_section_microscopy_min.pdf"
                           )
                       )
                ),
