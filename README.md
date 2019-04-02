@@ -50,5 +50,8 @@ The metamorphic facies section includes a brief introduction to metamorphic faci
 - Indiana University - Purdue University of Indianapolis (IUPUI)
    - Department of Earth Sciences
 
+# How to Cite RockR
+- RockR (2019). Retrieved from http://apps.earthsciences.iupui.edu:3838/RockR/
+
 # License
-Licensed under the [GNU General Public License v3.0](https://github.com/jshukle/RockR/blob/master/LICENSE)
+Licensed under the [GNU General Public License v3.0](https://github.com/RockRwebapp/RockR/blob/master/LICENSE)
