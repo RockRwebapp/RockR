@@ -105,22 +105,20 @@ ui <- fluidPage(
     # The title section below is where you can alter the navbar title and logo
     title = 
       a(id = "earthSciTitle",
-        fluidRow(
-          column(2,
-               img(src="Figs/trident_large.png", height = 40, width = 40)
-          ),
-          column(10,
-              p("IUPUI Earth Sciences Apps")
-          )
-        ),
-      id = "linkIUPUI",
-      target = "_blank",
-      href = "https://earthsciences.iupui.edu/",
-      style = "color: white; font-size: 20px; font-weight: bold",
-      onclick = "gtag('event', 'IUPUIEarthSciences', {
-          'event_category': 'link click',
-          'event_label': 'user clicked IUPUI Earth Sciences link'
-          })"
+        img(src="Figs/trident_large.png", 
+            height = 40, 
+            width = 40, 
+            style = "display: inline-block;"),
+        p("IUPUI Earth Sciences Apps", 
+          style = "display: inline-block;"),
+        id = "linkIUPUI",
+        target = "_blank",
+        href = "https://earthsciences.iupui.edu/",
+        style = "color: white; font-size: 20px; font-weight: bold",
+        onclick = "gtag('event', 'IUPUIEarthSciences', {
+            'event_category': 'link click',
+            'event_label': 'user clicked IUPUI Earth Sciences link'
+            })"
       ),
 
     # UI code for App Info tab
