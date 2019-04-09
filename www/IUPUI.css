@@ -8656,7 +8656,8 @@ button.close {
 
 @media screen and (max-width:767px) {
     .icon-bar {
-        display: none;
+		position: absolute;
+		z-index: 99999;
     }
 }
 
