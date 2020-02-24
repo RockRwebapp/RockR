@@ -20,32 +20,16 @@ library(kableExtra)
 
 <br>
 
-##App authors
-Jeremiah Mickey,
-John T. Shukle,
-Thomas zur Loye*,
-
-* Corresponding author
+##Contact the RockR! developers
+###Apperception-Group, LLC
+(John Shukle, Tom zur Loye, Jeremiah Mickey)  
+apperception.group@gmail.com
 
 ##Faculty Administrator
 Andrew Barth (ibsz100@iupui.edu)
 
-##Contact the RockR! developers
-earthsciencesapps.rockr@gmail.com
-
-##RockR! social media
-Facebook page: RockR 
-
-Facebook @mention: @RockRwebapp
-
-Reddit: u/RockRwebapp
-
-Twitter page: RockRwebapp
-
-Twitter @mention: @RRwebapp
-
 ##How to cite RockR!
-RockR! (2019). Retrieved from http://apps.earthsciences.iupui.edu:3838/RockR/
+RockR! (2020). Retrieved from http://apps.earthsciences.iupui.edu:3838/RockR/
 
 ##License and Limitations
 Licensed under the <a href="https://github.com/jshukle/RockR/blob/master/LICENSE" target="_blank">**GNU General Public License v3.0**</a>
@@ -95,7 +79,7 @@ Xie, Y. (2017). knitr: A General-Purpose Package for Dynamic Report Generation
 
 ##Primary Literature References
 
-Aramaki, S., & Roy, R. (1962). Revised phase diagram for the system Al2O3—SiO2. _Journal of the American Ceramic Society_, _45_(*5*), 229-242.
+Aramaki, S., & Roy, R. (1962). Revised phase diagram for the system Al2O3?SiO2. _Journal of the American Ceramic Society_, _45_(*5*), 229-242.
 
 Cox, K. G., Bell, J. D., & Pankhurst, R. J. (1979) The interpretation of igneous rocks. London, GB: Unwin Hyman Ltd.
 
@@ -110,7 +94,7 @@ Classification of Volcanic Rocks Based on the Total Alkali-Silica Diagram. _Jour
 
 Middlemost, E. (1994). Naming materials in the magma/igneous rock system. _Earth-Science Reviews_, _37_, 215-224
 
-Möbius, A. F. (1827). Der barycentrische Calcul ein neues Hüsmittel zur
+M?bius, A. F. (1827). Der barycentrische Calcul ein neues H?smittel zur
   analytischen Behandlung der Geometrie dargestellt und insbesondere
   auf die Bildung neuer Classen von Aufgaben und die
   Entwickelung mehrerer Eiegnschaften der Kegelschnitte. Leipzig: J.
