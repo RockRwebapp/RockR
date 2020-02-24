@@ -5274,7 +5274,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
     border: 1px solid transparent;
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1390px) {
     .navbar {
         position: relative;
         width: 98.5%;
@@ -8637,7 +8637,8 @@ button.close {
     font-size: 20px;
 }
 
-@media screen and (min-width:768px) and (max-width:1100px) {
+/* this sets the location of the social media bar */
+@media screen and (min-width:768px) and (max-width:1390px) {
     .icon-bar {
         position: absolute;
         top: 20px;
@@ -8645,14 +8646,15 @@ button.close {
 	z-index: 1001;
     }
 }
-
-@media screen and (min-width:1101px) and (max-width:1390px) {
+/*
+@media screen and (min-width:1100px) and (max-width:1390px) {
     .tab-content {
         padding-top: 50px;
     }
 }
-
-@media screen and (max-width:1100px) {
+*/
+/* this sets the location of the social media icons */
+@media screen and (max-width:1390px) {
     #img-id {
         position: absolute;
         top: 80px;
@@ -8660,6 +8662,7 @@ button.close {
     }
 }
 
+/* this sets the location of the social media icons for mobile devices */
 @media screen and (max-width:767px) {
     .icon-bar {
 	position: absolute;
@@ -8669,6 +8672,7 @@ button.close {
     }
 }
 
+/* this sets the location of the social media icons for mobile devices */
 @media screen and (max-width:767px) {
     #earthSciTitle {
         position: absolute;
